@@ -3,6 +3,7 @@ const path  = require('path'),
 
 module.exports = function() {
     return {
+        mode   : 'development',
         context: paths.root,
         entry  : {
             index: path.resolve(paths.src, 'index.ts')

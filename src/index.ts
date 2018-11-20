@@ -1,10 +1,15 @@
 import Vue from 'vue';
-import App from './components/app.vue';
+import VueRouter from 'vue-router';
+import App from './app/app.vue';
+import './index.scss';
+import {routes} from './services/routes';
+
+Vue.use(VueRouter);
 
 new Vue({
-    el        : '#app',
     components: {
         App
     },
+    router    : new VueRouter({routes}),
     template  : '<App/>'
-});
+}).$mount('#app');
