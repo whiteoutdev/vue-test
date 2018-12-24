@@ -2,7 +2,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app/app.vue';
 import './index.scss';
+import {courseService} from './services/course-service';
 import {routes} from './services/routes';
+
+courseService.loadCourseDefinitions();
 
 Vue.use(VueRouter);
 

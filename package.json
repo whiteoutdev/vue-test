@@ -10,6 +10,7 @@
   "devDependencies": {
     "@types/vue": "^2.0.0",
     "@types/vue-router": "^2.0.0",
+    "@types/webpack-env": "^1.13.6",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.10.0",

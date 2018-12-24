@@ -1,4 +1,5 @@
 import {RouteConfig} from 'vue-router';
+import AdminPage from '../pages/admin-page/admin-page.vue';
 import CoursesPage from '../pages/courses-page/courses-page.vue';
 import HomePage from '../pages/home-page/home-page.vue';
 
@@ -21,6 +22,14 @@ export const routes: RouteConfig[] = [
         component: CoursesPage,
         meta     : {
             title: 'Courses',
+            nav  : true
+        }
+    },
+    {
+        path     : '/admin',
+        component: AdminPage,
+        meta     : {
+            title: 'Admin',
             nav  : true
         }
     },
