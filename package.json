@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "sfw": "webpack-dev-server --env=sfw"
   },
   "devDependencies": {
+    "@types/node": "^10.12.18",
     "@types/vue": "^2.0.0",
     "@types/vue-router": "^2.0.0",
     "@types/webpack-env": "^1.13.6",

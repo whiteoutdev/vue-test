@@ -1,9 +1,11 @@
 import {CourseDefinition} from '../models/CourseDefinition';
+import {appConfig, Env} from './app-config';
 import {StorageKeys, storageService} from './storage-service';
+import RequireContext = __WebpackModuleApi.RequireContext;
 
 export class CourseService {
     public loadCourseDefinitions(): void {
-        const req                                         = require.context('../data/course-definitions', false, /\.ts$/),
+        const req                                         = this.requireCourseDefinitions(),
               storedCourseDefinitions: CourseDefinition[] = this.getCourseDefinitions();
         req.keys().forEach(key => {
             const courseDefinition: CourseDefinition = req(key).default,
@@ -25,6 +27,13 @@ export class CourseService {
 
     public deleteCourseDefinitions(): void {
         storageService.remove(StorageKeys.COURSE_DEFINITIONS);
+    }
+
+    private requireCourseDefinitions(): RequireContext {
+        if (appConfig.env === Env.SFW) {
+            return require.context('../data/course-definitions-sfw', false, /\.ts$/);
+        }
+        return require.context('../data/course-definitions', false, /\.ts$/);
     }
 }
 

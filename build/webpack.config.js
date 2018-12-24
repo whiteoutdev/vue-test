@@ -1,7 +1,9 @@
 const path  = require('path'),
       paths = require('./paths');
 
-module.exports = function() {
+module.exports = function(env) {
+    console.log(env);
+
     return {
         mode   : 'development',
         context: paths.root,
@@ -14,7 +16,7 @@ module.exports = function() {
         module : {
             rules: require('./rules')
         },
-        plugins: require('./plugins'),
+        plugins: require('./plugins')(env),
         resolve: {
             extensions: ['.ts', '.js'],
             alias     : {
