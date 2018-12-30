@@ -4,7 +4,9 @@ import App from './app/app.vue';
 import './index.scss';
 import {courseService} from './services/course-service';
 import {routes} from './services/routes';
+import 'roboto-fontface';
 
+courseService.deleteCourseDefinitions();
 courseService.loadCourseDefinitions();
 
 Vue.use(VueRouter);

@@ -1,0 +1,20 @@
+@import '../../styles/colours';
+
+.CardContainer {
+    margin: -.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    &:after {
+        content: '';
+        flex: 1000;
+    }
+
+    .card {
+        flex: 1 0 600px;
+        margin: .5rem;
+        background-color: $off-white;
+        box-shadow: 0 0 12px -1px rgba(#000, .5);
+    }
+}

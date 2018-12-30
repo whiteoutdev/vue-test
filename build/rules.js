@@ -20,5 +20,14 @@ module.exports = [
             'css-loader',
             'sass-loader'
         ]
+    },
+    {
+        test: /\.(jpg|jpeg|png|gif|svg|woff2?|ttf)$/,
+        use : {
+            loader : 'url-loader',
+            options: {
+                limit: 16384
+            }
+        }
     }
 ];

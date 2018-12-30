@@ -1,9 +1,9 @@
 <template>
     <div class="CoursesPage">
-        Courses
-        <ul>
-            <li v-for="courseDefinition in courseDefinitions">{{courseDefinition.name}}</li>
-        </ul>
+        <h1>Courses</h1>
+        <card-container v-for="courseDefinition in courseDefinitions" :key="courseDefinition.id">
+            <course-card :course-definition="courseDefinition"/>
+        </card-container>
     </div>
 </template>
 

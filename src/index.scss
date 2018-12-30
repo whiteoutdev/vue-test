@@ -1,1 +1,9 @@
 @import '~reset-css/sass/reset';
+@import './styles/colours';
+@import './styles/typography';
+
+html, body {
+    height: 100%;
+    background-color: #e4e4e5;
+    color: $text-secondary;
+}

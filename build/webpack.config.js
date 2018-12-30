@@ -2,8 +2,6 @@ const path  = require('path'),
       paths = require('./paths');
 
 module.exports = function(env) {
-    console.log(env);
-
     return {
         mode   : 'development',
         context: paths.root,
